@@ -82,8 +82,21 @@ tr:nth-child(even) {
 }
 
 .del-btn{
-  background-color: #F55050;
-  color: white;
+  color: #F55050;
   padding: 5px;
   cursor: pointer;
 }
+
+.row{
+  display: flex;
+}
+.col{
+  flex:1;
+}
+.sort-icon{
+  cursor: pointer;
+}
+.sort-icon:hover{
+  color: #61dafb;
+}
+

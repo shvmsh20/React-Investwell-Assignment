@@ -39,6 +39,20 @@ class CompDidMountAxios extends Component {
         
     }
 
+    compareBy = (key) => {
+        return function(a, b) {
+        if (a[key] < b[key]) return -1;
+        if (a[key] > b[key]) return 1;
+        return 0;
+        };
+      };
+
+    sortBy = (key) => {
+    let arrayCopy = [...this.state.items];
+    arrayCopy.sort(this.compareBy(key));
+    this.setState({items: arrayCopy});
+    };
+
   render() {
     return (
       <div>
@@ -48,9 +62,9 @@ class CompDidMountAxios extends Component {
       
         <h1 className='heading'>{(this.state.renderType).toUpperCase()}</h1>
 
-        {this.state.renderType==="posts" && <Post items = {this.state.items} del={this.delRow}/>}
-        {this.state.renderType==="comments" && <Comment items = {this.state.items} del={this.delRow}/>}
-        {this.state.renderType==="users" && <User items = {this.state.items} del={this.delRow}/>}
+        {this.state.renderType==="posts" && <Post items = {this.state.items} del={this.delRow} sorting={this.sortBy}/>}
+        {this.state.renderType==="comments" && <Comment items = {this.state.items} del={this.delRow} sorting={this.sortBy}/>}
+        {this.state.renderType==="users" && <User items = {this.state.items} del={this.delRow} sorting={this.sortBy}/>}
         
         
     </div>
