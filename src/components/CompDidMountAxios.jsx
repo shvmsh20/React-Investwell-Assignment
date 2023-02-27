@@ -29,8 +29,16 @@ class CompDidMountAxios extends Component {
                 items: res.data
             }));
         }
+    }
+
+    delRow = (id)=>{
+        let  newItems = this.state.items.filter(item=>item.id!==id);
+        this.setState({
+            items: newItems
+        })
         
     }
+
   render() {
     return (
       <div>
@@ -40,9 +48,9 @@ class CompDidMountAxios extends Component {
       
         <h1 className='heading'>{(this.state.renderType).toUpperCase()}</h1>
 
-        {this.state.renderType==="posts" && <Post items = {this.state.items} />}
-        {this.state.renderType==="comments" && <Comment items = {this.state.items} />}
-        {this.state.renderType==="users" && <User items = {this.state.items} />}
+        {this.state.renderType==="posts" && <Post items = {this.state.items} del={this.delRow}/>}
+        {this.state.renderType==="comments" && <Comment items = {this.state.items} del={this.delRow}/>}
+        {this.state.renderType==="users" && <User items = {this.state.items} del={this.delRow}/>}
         
         
     </div>
