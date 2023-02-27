@@ -28,6 +28,7 @@
   color: #61dafb;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +37,46 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custum CSS */
+
+.btn{
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #61dafb;
+  background-color: #282c34;
+  color: white;
+  border-radius: 5px;
+}
+.btn:hover{
+  background-color: #020202;
+  cursor: pointer;
+}
+
+.container{
+  background-color: #282c34;
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+
+}
+.heading{
+  text-align: center;
+}
+table{
+  width: 95%;
+  margin: auto;
+}
+table, th, tr, td{
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+}
+th{
+  background-color: #020202;
+}
+tr:nth-child(even) {
+  background-color: #020202;
+}
+
