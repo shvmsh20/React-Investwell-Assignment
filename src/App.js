@@ -1,6 +1,10 @@
 import './App.css';
 import React, { useState } from 'react';
+import {Routes, Route} from "react-router-dom"
 import CompDidMountAxios from './components/CompDidMountAxios';
+import Post from './components/Post';
+import Comment from './components/Comment';
+
 
 
 
@@ -8,8 +12,8 @@ function App() {
 
   return (
      <div className='container'>
-     
-      <CompDidMountAxios/>
+     <CompDidMountAxios/>
+    
 
     </div>
     
