@@ -9,12 +9,16 @@ function Post({items, del, sorting}) {
     <tr>
     <th><div className='row'><span className='col'>ID</span>
     <ImportExportIcon className='col sort-icon' onClick={()=>sorting('id')}/></div></th>
+
     <th><div className='row'><span className='col'>UserID</span>
     <ImportExportIcon className='col sort-icon' onClick={()=>sorting('userId')}/></div></th>
+
     <th><div className='row'><span className='col'>Title</span>
-    <ImportExportIcon className='col sort-icon' onClick={()=>sorting('title')}/></div></th>  
+    <ImportExportIcon className='col sort-icon' onClick={()=>sorting('title')}/></div></th> 
+
     <th><div className='row'><span className='col'>Body</span>
     <ImportExportIcon className='col sort-icon' onClick={()=>sorting('body')}/></div></th>  
+    
     <th>Delete</th>
     </tr>
     </thead>
