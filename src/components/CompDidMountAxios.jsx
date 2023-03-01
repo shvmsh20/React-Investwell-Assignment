@@ -3,6 +3,7 @@ import axios from 'axios';
 import Post from './Post';
 import Comment from './Comment';
 import User from "./User";
+import { Link } from 'react-router-dom';
 
 class CompDidMountAxios extends Component {
     constructor(props) {
@@ -58,9 +59,11 @@ class CompDidMountAxios extends Component {
   render() {
     return (
       <div>
-        <button className='btn' onClick={()=>this.handleUpdate("posts")}>POSTS</button>
-        <button className='btn' onClick={()=>this.handleUpdate("comments")}>COMMENTS</button>
-        <button className='btn' onClick={()=>this.handleUpdate("users")}>USERS</button>
+        <Link to="/posts"><button className='btn' onClick={()=>this.handleUpdate("posts")}>POSTS</button></Link>
+        
+        <Link to="/comments"><button className='btn' onClick={()=>this.handleUpdate("comments")}>COMMENTS</button></Link> 
+
+        <Link to="/users"><button className='btn' onClick={()=>this.handleUpdate("users")}>USERS</button></Link>
       
         <h1 className='heading'>{(this.state.renderType).toUpperCase()}</h1>
 
