@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import CompDidMountAxios from './components/CompDidMountAxios';
+import AxiosCall from './components/AxiosCall';
 
 
 
@@ -10,7 +10,7 @@ function App() {
   return (
      <div className='container'>
 
-     <CompDidMountAxios />
+     <AxiosCall />
 
     </div>
     
