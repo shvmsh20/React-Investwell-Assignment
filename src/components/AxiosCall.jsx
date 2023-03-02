@@ -5,11 +5,12 @@ import Comment from './Comment';
 import User from "./User";
 import { Link } from 'react-router-dom';
 
-let renderType = "";
 
-const CompDidMountAxios = () => {
 
-    const [items, setItems] = useState([]);
+const AxiosCall = () => {
+
+    const [items, setItems] = useState();
+    const [renderType, setRenderType] = useState();
     const delRow = (id)=>{
         setItems((prevItems)=>{
           return prevItems.filter(item=>item.id!==id)
@@ -31,12 +32,12 @@ const CompDidMountAxios = () => {
     };
     
     const handleUpdate = (renderValue)=>{
-        //If user clicks on same button then no axios call is made
-        if(renderType!==renderValue){
+       
+       
             axios.get(`https://jsonplaceholder.typicode.com/${renderValue}`)
             .then(res => setItems(res.data));
-            renderType = renderValue; 
-        }
+            setRenderType(renderValue);
+        
     }
 
  
@@ -59,4 +60,4 @@ const CompDidMountAxios = () => {
 
 }
 
-export default CompDidMountAxios
+export default AxiosCall
